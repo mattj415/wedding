@@ -14,7 +14,7 @@ body {
 }
 .overlay {
     background-color: rgba(255, 255, 255, 0.5);
-    height: inherit;
+    height: 100%;
 }
 .menu-item {
     float:left;
@@ -33,7 +33,21 @@ body {
     font-size: 24pt;
     text-align: center;
 }
+img.names {
+    margin: 0 auto;
+    display: block;
 
+}
+div.date {
+    bottom:10px;
+    position: fixed;
+    width: 100%;
+}
+img.date {
+    margin: 0 auto;
+    display: block;
+
+}
 /* effects */
 
 div.window {
@@ -54,10 +68,10 @@ input.toggle { display: none; }
 .slidedown {
     background-color: rgba(255,255,255,0.5);
     position: absolute;
-    top: 120px;
-    left: 120px;
-    width: 500px;
-    height: 700px;
+    top: 220px;
+    left: 90px;
+    width: 30%;
+    height: 70%;
 }
 .slidedown.ng-enter,
 .slidedown.ng-leave {
@@ -67,21 +81,15 @@ input.toggle { display: none; }
     transition: all 1s ease;
 }
 .slidedown.ng-enter {
-    top: -100%;
+    left: -100%;
 }
 .slidedown.ng-enter-active {
-    top: 120px;
-    left: 120px;
-    width: 500px;
-    height: 700px;
+    left: 90px;
 }
 .slidedown.ng-leave {
-    top: 120px;
-    left: 120px;
-    width: 500px;
-    height: 700px;
+    left: 90px;
 }
 .slidedown.ng-leave-active {
-    top: 100%;
+    left: 100%;
 }
 
