@@ -11,6 +11,17 @@ angular.module('myApp', [
     'myApp.version',
     'ngAnimate'
 ]).
-config(['$routeProvider', function($routeProvider) {
-      $routeProvider.otherwise({redirectTo: '/'});
-}]);
+    config(['$routeProvider', function($routeProvider) {
+        $routeProvider
+            .otherwise({redirectTo: '/'})
+    }]);
+
+/*
+angular.module('myApp', [])
+    .controller('MenuController', [ '$location', function($location) {
+        this.changeView = function(){
+            $location.path(this.selection);
+            $location.url(this.selection);
+        }
+    }]);
+*/

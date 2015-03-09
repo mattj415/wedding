@@ -1,6 +1,6 @@
 /* app css stylesheet */
 body {
-    background-image: url("IMG_1862.JPG");
+    background-image: url("img/IMG_1862.JPG");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -20,11 +20,14 @@ body {
     float:left;
     width:20%;
     text-align: center;
-    text-align: -webkit-center;
 }
 .menu-item-text {
     color: white;
     text-decoration: none;
+}
+
+.menu-item-text:hover {
+    text-shadow: 0 0 0.2em #8F7, 0 0 0.2em #8F7, 0 0 0.2em #8F7
 }
 .heading-text {
     font-size: 24pt;
@@ -32,6 +35,21 @@ body {
 }
 
 /* effects */
+
+div.window {
+    float:left;
+    width: 20%;
+    text-align: center;
+}
+div.window label {
+    color: white;
+}
+div.window label:hover {
+    cursor: pointer;
+    text-shadow: 0 0 0.2em #8F7, 0 0 0.2em #8F7, 0 0 0.2em #8F7
+}
+input.toggle:checked + label { color:yellow; }
+input.toggle { display: none; }
 
 .slidedown {
     background-color: rgba(255,255,255,0.5);
