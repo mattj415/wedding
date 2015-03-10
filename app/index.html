@@ -19,13 +19,24 @@
 <body>
 
 
-<div class="header" > <!-- ng-controller="MenuController as menu">  -->
-    <div class="menu-item"><a href="#/our_story" class="menu-item-text">OUR STORY</a></div>
-    <div class="menu-item"><a href="#/gallery" class="menu-item-text" >GALLERY</a></div>
-    <div class="menu-item"><a href="#/registry" class="menu-item-text" >REGISTRY</a></div>
+<div class="header" ng-controller="MenuController as menu">
+    <!--    <div class="menu-item"><a href="#/our_story" class="menu-item-text">OUR STORY</a></div>
+      <div class="menu-item"><a href="#/gallery" class="menu-item-text" >GALLERY</a></div>
+      <div class="menu-item"><a href="#/registry" class="menu-item-text" >REGISTRY</a></div>
     <div class="menu-item"><a href="#/event_info" class="menu-item-text" >EVENT INFO</a></div>
-    <div class="menu-item"><a href="#/rsvp" class="menu-item-text" >RSVP</a></div>
-<!--
+      <div class="menu-item"><a href="#/rsvp" class="menu-item-text" >RSVP</a></div> -->
+    <div class="window">
+        <input type="radio" class="toggle" id="our_story" value="our_story "name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <label for="our_story">OUR STORY</label>
+    </div>
+    <div class="window">
+        <input type="radio" class="toggle" id="gallery" value="gallery "name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <label for="gallery">GALLERY</label>
+    </div>
+    <div class="window">
+        <input type="radio" class="toggle" id="registry" value="registry "name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <label for="registry">REGISTRY</label>
+    </div>
     <div class="window">
         <input type="radio" class="toggle" id="event_info" value="event_info "name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
         <label for="event_info">EVENT INFO</label>
@@ -36,7 +47,6 @@
     </div>
 
     <div style="color:white"> color = {{menu.selection | json}}</div>
-    -->
 </div>
 <div> <img src="img/names.png" class="names" /></div>
 

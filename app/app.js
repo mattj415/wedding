@@ -14,14 +14,16 @@ angular.module('myApp', [
     config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .otherwise({redirectTo: '/'})
-    }]);
-
-/*
-angular.module('myApp', [])
+    }])
     .controller('MenuController', [ '$location', function($location) {
         this.changeView = function(){
-            $location.path(this.selection);
-            $location.url(this.selection);
+        //    $location.path(this.selection);
+            if ( this.selection == 'gallery'){
+                $location.url('/');
+            } else {
+                $location.url(this.selection);
+            }
+
         }
     }]);
-*/
+
