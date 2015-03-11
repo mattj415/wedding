@@ -10,5 +10,6 @@ angular.module('myApp.rsvp', ['ngRoute','ngAnimate'])
 }])
 
 .controller('rsvpCtrl', [function() {
+        this.active = true;
 
 }]);

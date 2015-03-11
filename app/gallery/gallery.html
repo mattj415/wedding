@@ -1,5 +1,21 @@
-<div class="overlay" >
-    <div class="heading-text">
-        Coming Soon
-    </div>
-</div>
+
+	<div ng-controller="galleryCtrl as gallery">
+        <!-- slider container -->
+	    <div class="container slider">
+
+    	        <!-- enumerate all photos -->
+    	        <img ng-repeat="photo in gallery.photos" class="slide" ng-swipe-right="gallery.showPrev()" ng-swipe-left="gallery.showNext()" ng-show="gallery.isActive($index)" ng-src="{{photo.src}}" />
+
+    	        <!-- prev / next controls -->
+    	        <a class="arrow prev" href="#/gallery" ng-click="gallery.showPrev()"></a>
+    	        <a class="arrow next" href="#/gallery" ng-click="gallery.showNext()"></a>
+
+    	        <!-- extra navigation controls -->
+    	        <ul class="nav">
+    	            <li ng-repeat="photo in gallery.photos" ng-class="{'active':gallery.isActive($index)}">
+    	                <img ng-src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="gallery.showPhoto($index);" />
+    	            </li>
+    	        </ul>
+
+    	    </div>
+	</div>

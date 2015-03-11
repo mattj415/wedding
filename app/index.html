@@ -26,27 +26,26 @@
     <div class="menu-item"><a href="#/event_info" class="menu-item-text" >EVENT INFO</a></div>
       <div class="menu-item"><a href="#/rsvp" class="menu-item-text" >RSVP</a></div> -->
     <div class="window">
-        <input type="radio" class="toggle" id="our_story" value="our_story "name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <input type="radio" class="toggle" id="our_story" value="our_story" name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
         <label for="our_story">OUR STORY</label>
     </div>
     <div class="window">
-        <input type="radio" class="toggle" id="gallery" value="gallery "name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <input type="radio" class="toggle" id="gallery" value="gallery" name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
         <label for="gallery">GALLERY</label>
     </div>
     <div class="window">
-        <input type="radio" class="toggle" id="registry" value="registry "name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <input type="radio" class="toggle" id="registry" value="registry" name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
         <label for="registry">REGISTRY</label>
     </div>
     <div class="window">
-        <input type="radio" class="toggle" id="event_info" value="event_info "name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <input type="radio" class="toggle" id="event_info" value="event_info" name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
         <label for="event_info">EVENT INFO</label>
     </div>
     <div class="window">
-        <input type="radio" class="toggle" id="rsvp" value="rsvp "name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <input type="radio" class="toggle" id="rsvp" value="rsvp" name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
         <label for="rsvp">RSVP</label>
     </div>
 
-    <div style="color:white"> color = {{menu.selection | json}}</div>
 </div>
 <div> <img src="img/names.png" class="names" /></div>
 
@@ -54,7 +53,7 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div ng-view class="slidedown"></div>
+<div ng-view class="content_view"></div>
 
 <div class="date"> <img src="img/date.png" class="date" /></div>
 
@@ -64,6 +63,7 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
 <script src="app.js"></script>
 <script src="our_story/our_story.js"></script>
 <script src="gallery/gallery.js"></script>

@@ -9,7 +9,8 @@ angular.module('myApp', [
     'myApp.event_info',
     'myApp.rsvp',
     'myApp.version',
-    'ngAnimate'
+    'ngAnimate',
+    'ngTouch'
 ]).
     config(['$routeProvider', function($routeProvider) {
         $routeProvider
@@ -19,7 +20,7 @@ angular.module('myApp', [
         this.changeView = function(){
         //    $location.path(this.selection);
             if ( this.selection == 'gallery'){
-                $location.url('/');
+                $location.url(this.selection);
             } else {
                 $location.url(this.selection);
             }
