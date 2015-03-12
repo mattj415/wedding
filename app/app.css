@@ -170,10 +170,12 @@ input.toggle { display: none; }
 .slider {
     border: 15px solid #FFFFFF;
     border-radius: 5px;
-    height: 500px;
+    height: 750px;
     margin: 0 auto;
     position: relative;
-    width: 800px;
+    top: -50px;
+    width: 1000px;
+    overflow:hidden;
 
     -webkit-perspective: 1000px;
     -moz-perspective: 1000px;
@@ -191,6 +193,16 @@ input.toggle { display: none; }
     -ms-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
 */
+}
+.crop {
+    position: absolute;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto;
+    height: auto;
+    width: auto;
 }
 .slide {
     position: absolute;

@@ -12,13 +12,13 @@ angular.module('myApp.gallery', ['ngRoute','ngAnimate','ngTouch'])
 .controller('galleryCtrl', [function() {
         // Set of Photos
         this.photos = [
-            {src: 'img/1.jpg', desc: 'Image 01'},
-            {src: 'img/2.jpg', desc: 'Image 01'},
-            {src: 'img/3.jpg', desc: 'Image 01'},
-            {src: 'img/4.jpg', desc: 'Image 01'},
-            {src: 'img/5.jpg', desc: 'Image 01'},
-            {src: 'img/6.jpg', desc: 'Image 01'},
-            {src: 'img/7.jpg', desc: 'Image 01'}
+            {src: 'img/1a.jpg', desc: 'Image 01'},
+            {src: 'img/2a.jpg', desc: 'Image 01'},
+            {src: 'img/3a.jpg', desc: 'Image 01'},
+            {src: 'img/4a.jpg', desc: 'Image 01'},
+            {src: 'img/5a.jpg', desc: 'Image 01'},
+            {src: 'img/6a.jpg', desc: 'Image 01'},
+            {src: 'img/7a.jpg', desc: 'Image 01'}
 
         ];
 
