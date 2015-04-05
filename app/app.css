@@ -1,8 +1,12 @@
 /* app css stylesheet */
+html {
+    background: url("img/IMG_1862.JPG")  no-repeat center center;
+    background-size:cover;
+    min-height:100%;
+
+}
 body {
-    background-image: url("img/IMG_1862.JPG");
-    background-size: cover;
-    background-repeat: no-repeat;
+    min-height:100%;
 }
 .header {
     background-color: #000000;
@@ -36,17 +40,28 @@ body {
 img.names {
     margin: 0 auto;
     display: block;
+    width:80%;
 
 }
 div.date {
-    bottom:10px;
-    position: fixed;
     width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
 }
 img.date {
     margin: 0 auto;
     display: block;
 
+}
+div.heading {
+    position: absolute;
+    width:100%;
+
+}
+div.outer-img-container {
+    position: absolute;
+    left:50%
 }
 
 .content_view {
@@ -66,6 +81,114 @@ div.window {
 }
 div.window label {
     color: white;
+    font-size: medium;
+}
+/* laptops, ipad 3rd gen 8*/
+@media screen {
+    body {
+        background-color: green;
+    }
+    div.window label {
+        font-size: medium;
+    }
+    img.resize{
+        width:1000px; /* you can use % */
+        height: auto;
+    }
+    .slider {
+        height: 750px;
+        width: 1000px;
+
+        -webkit-perspective: 1000px;
+        -moz-perspective: 1000px;
+        perspective: 1000px;
+    }
+}
+/* ipad mini, 1st gen, 2nd gen landscape */
+@media screen and (max-width: 1024px) {
+    body {
+        background-color: yellow;
+    }
+    div.window label {
+        font-size: small;
+    }
+    img.resize{
+        width:900px; /* you can use % */
+        height: auto;
+    }
+    .slider {
+        height: 675px;
+        width: 900px;
+
+        -webkit-perspective: 900px;
+        -moz-perspective: 900px;
+        perspective: 900px;
+    }
+}
+/* small phones lanscape */
+@media screen and (max-width: 640px) {
+    body {
+        background-color: orange;
+    }
+    img.resize{
+        width:600px; /* you can use % */
+        height: auto;
+    }
+    div.window label {
+        font-size: xx-small;
+    }
+    .slider {
+        height: 450px;
+        width: 600px;
+
+        -webkit-perspective: 600px;
+        -moz-perspective: 600px;
+        perspective: 600px;
+    }
+}
+/* small phones portrait */
+@media screen and (max-width: 360px) {
+    body {
+        background-color: red;
+    }
+    img.resize{
+        width:300px; /* you can use % */
+        height: auto;
+    }
+    div.window label {
+        font-size: xx-small;
+    }
+    .slider {
+        height: 225px;
+        top: -30px;
+        width: 300px;
+
+        -webkit-perspective: 300px;
+        -moz-perspective: 300px;
+        perspective: 300px;
+    }
+}
+/* ipad mini portrait */
+@media screen and (max-width: 768px) {
+    body {
+        background-color: gold;
+    }
+    img.resize{
+        width:700px; /* you can use % */
+        height: auto;
+    }
+    div.window label {
+        font-size: xx-small;
+    }
+    .slider {
+        height: 500px;
+        top: -30px;
+        width: 700px;
+
+        -webkit-perspective: 700px;
+        -moz-perspective: 700px;
+        perspective: 700px;
+    }
 }
 div.window label:hover {
     cursor: pointer;
@@ -104,6 +227,7 @@ input.toggle { display: none; }
     left: 100%;
 }
 
+/* Gallery CSS */
 .arrow {
     cursor: pointer;
     display: block;
@@ -155,7 +279,7 @@ input.toggle { display: none; }
     border-radius: 5px;
     cursor: pointer;
     display: inline-block;
-    height: 30px;
+    height: 37px;
     margin: 0 8px;
     position: relative;
     width: 50px;
@@ -170,13 +294,16 @@ input.toggle { display: none; }
 .slider {
     border: 15px solid #FFFFFF;
     border-radius: 5px;
-    height: 750px;
+
     margin: 0 auto;
     position: relative;
-    top: -50px;
-    width: 1000px;
-    overflow:hidden;
+    z-index:10;
+    left:-50%;
 
+    overflow:hidden;
+/*
+    height: 750px;
+    width: 1000px;
     -webkit-perspective: 1000px;
     -moz-perspective: 1000px;
 
@@ -185,7 +312,7 @@ input.toggle { display: none; }
     -webkit-transform-style: preserve-3d;
 
     transform-style: preserve-3d;
-
+*/
 /* invalid css properties?
     -ms-perspective: 1000px;
     -o-perspective: 1000px;

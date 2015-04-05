@@ -17,14 +17,26 @@ angular.module('myApp', [
             .otherwise({redirectTo: '/'})
     }])
     .controller('MenuController', [ '$location', function($location) {
-        this.changeView = function(){
-        //    $location.path(this.selection);
-            if ( this.selection == 'gallery'){
-                $location.url(this.selection);
-            } else {
-                $location.url(this.selection);
-            }
+        this.current_selection = '/';
+        this.changeView = function() {
+            //    $location.path(this.selection);
 
+            if (this.current_selection == this.selection) {
+                this.selection = '/';
+                this.current_selection = this.selection;
+            } else {
+                this.current_selection = this.selection;
+            }
+            $location.url(this.current_selection);
+
+
+        },
+        this.uncheck = function(event){
+            if ( this.selection == this.current_selection ){
+                this.current_selection = '/';
+                this.checked = false;
+                $location.url(this.current_selection);
+            }
         }
     }]);
 

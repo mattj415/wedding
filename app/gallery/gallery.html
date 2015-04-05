@@ -1,8 +1,8 @@
 
 	<div ng-controller="galleryCtrl as gallery">
         <!-- slider container -->
-	    <div class="container slider">
-
+        <div class="outer-img-container">
+	        <div class="container slider">
     	        <!-- enumerate all photos -->
     	        <img ng-repeat="photo in gallery.photos" class="slide" ng-swipe-right="gallery.showPrev()" ng-swipe-left="gallery.showNext()" ng-show="gallery.isActive($index)" ng-src="{{photo.src}}" />
 
@@ -13,9 +13,10 @@
     	        <!-- extra navigation controls -->
     	        <ul class="nav">
     	            <li ng-repeat="photo in gallery.photos" ng-class="{'active':gallery.isActive($index)}">
-    	                <img ng-src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="gallery.showPhoto($index);" />
+    	                <img ng-src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="gallery.showPhoto($index);" class="resize"/>
     	            </li>
     	        </ul>
 
     	    </div>
+        </div>
 	</div>

@@ -26,28 +26,28 @@
     <div class="menu-item"><a href="#/event_info" class="menu-item-text" >EVENT INFO</a></div>
       <div class="menu-item"><a href="#/rsvp" class="menu-item-text" >RSVP</a></div> -->
     <div class="window">
-        <input type="radio" class="toggle" id="our_story" value="our_story" name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <input type="radio" class="toggle" id="our_story" value="our_story" name="menu" ng-model="menu.selection" ng-change="menu.changeView()" ng-click="menu.changeView()">
         <label for="our_story">OUR STORY</label>
     </div>
     <div class="window">
-        <input type="radio" class="toggle" id="gallery" value="gallery" name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <input type="radio" class="toggle" id="gallery" value="gallery" name="menu" ng-model="menu.selection" ng-change="menu.changeView()" ng-click="menu.changeView()" >
         <label for="gallery">GALLERY</label>
     </div>
     <div class="window">
-        <input type="radio" class="toggle" id="registry" value="registry" name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <input type="radio" class="toggle" id="registry" value="registry" name="menu" ng-model="menu.selection" ng-change="menu.changeView()" ng-click="menu.changeView()">
         <label for="registry">REGISTRY</label>
     </div>
     <div class="window">
-        <input type="radio" class="toggle" id="event_info" value="event_info" name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <input type="radio" class="toggle" id="event_info" value="event_info" name="menu" ng-model="menu.selection" ng-change="menu.changeView()" ng-click="menu.changeView()">
         <label for="event_info">EVENT INFO</label>
     </div>
     <div class="window">
-        <input type="radio" class="toggle" id="rsvp" value="rsvp" name="menu" ng-model="menu.selection" ng-change="menu.changeView()">
+        <input type="radio" class="toggle" id="rsvp" value="rsvp" name="menu" ng-model="menu.selection" ng-change="menu.changeView()" ng-click="menu.changeView()">
         <label for="rsvp">RSVP</label>
     </div>
 
 </div>
-<div> <img src="img/names.png" class="names" /></div>
+<div class="heading"> <img src="img/names.png" class="names" /></div>
 
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
