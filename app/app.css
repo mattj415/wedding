@@ -52,6 +52,7 @@ div.date {
 img.date {
     margin: 0 auto;
     display: block;
+    max-width: 40%;
 
 }
 div.heading {
@@ -83,113 +84,7 @@ div.window label {
     color: white;
     font-size: medium;
 }
-/* laptops, ipad 3rd gen 8*/
-@media screen {
-    body {
-        background-color: green;
-    }
-    div.window label {
-        font-size: medium;
-    }
-    img.resize{
-        width:1000px; /* you can use % */
-        height: auto;
-    }
-    .slider {
-        height: 750px;
-        width: 1000px;
 
-        -webkit-perspective: 1000px;
-        -moz-perspective: 1000px;
-        perspective: 1000px;
-    }
-}
-/* ipad mini, 1st gen, 2nd gen landscape */
-@media screen and (max-width: 1024px) {
-    body {
-        background-color: yellow;
-    }
-    div.window label {
-        font-size: small;
-    }
-    img.resize{
-        width:900px; /* you can use % */
-        height: auto;
-    }
-    .slider {
-        height: 675px;
-        width: 900px;
-
-        -webkit-perspective: 900px;
-        -moz-perspective: 900px;
-        perspective: 900px;
-    }
-}
-/* small phones lanscape */
-@media screen and (max-width: 640px) {
-    body {
-        background-color: orange;
-    }
-    img.resize{
-        width:600px; /* you can use % */
-        height: auto;
-    }
-    div.window label {
-        font-size: xx-small;
-    }
-    .slider {
-        height: 450px;
-        width: 600px;
-
-        -webkit-perspective: 600px;
-        -moz-perspective: 600px;
-        perspective: 600px;
-    }
-}
-/* small phones portrait */
-@media screen and (max-width: 360px) {
-    body {
-        background-color: red;
-    }
-    img.resize{
-        width:300px; /* you can use % */
-        height: auto;
-    }
-    div.window label {
-        font-size: xx-small;
-    }
-    .slider {
-        height: 225px;
-        top: -30px;
-        width: 300px;
-
-        -webkit-perspective: 300px;
-        -moz-perspective: 300px;
-        perspective: 300px;
-    }
-}
-/* ipad mini portrait */
-@media screen and (max-width: 768px) {
-    body {
-        background-color: gold;
-    }
-    img.resize{
-        width:700px; /* you can use % */
-        height: auto;
-    }
-    div.window label {
-        font-size: xx-small;
-    }
-    .slider {
-        height: 500px;
-        top: -30px;
-        width: 700px;
-
-        -webkit-perspective: 700px;
-        -moz-perspective: 700px;
-        perspective: 700px;
-    }
-}
 div.window label:hover {
     cursor: pointer;
     text-shadow: 0 0 0.2em #8F7, 0 0 0.2em #8F7, 0 0 0.2em #8F7
@@ -264,7 +159,6 @@ input.toggle { display: none; }
 .nav {
     bottom: -4px;
     display: block;
-    height: 48px;
     left: 0;
     margin: 0 auto;
     padding: 1em 0 0.8em;
@@ -273,27 +167,34 @@ input.toggle { display: none; }
     text-align: center;
     width: 100%;
     z-index: 5;
-}
-.nav li {
-    border: 5px solid #AAAAAA;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-    height: 37px;
-    margin: 0 8px;
-    position: relative;
-    width: 50px;
+    height: 48px;
 }
 .nav li.active {
     border: 5px solid #FFFFFF;
 }
+
+.nav li {
+    border: 5px solid #AAAAAA;
+    border-radius: 5px;
+    height: 37px;
+    margin: 0 8px;
+    width: 50px;
+}
+.nav li {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+
+}
+
 .nav li img {
     width: 100%;
 }
-
+img.resize{
+    width:1000px; /* you can use % */
+    height: auto;
+}
 .slider {
-    border: 15px solid #FFFFFF;
-    border-radius: 5px;
 
     margin: 0 auto;
     position: relative;
@@ -301,6 +202,15 @@ input.toggle { display: none; }
     left:-50%;
 
     overflow:hidden;
+
+    height: 750px;
+    width: 1000px;
+    border: 15px solid #FFFFFF;
+    border-radius: 5px;
+
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
 /*
     height: 750px;
     width: 1000px;
@@ -375,4 +285,221 @@ input.toggle { display: none; }
 }
 .slide, .slide.ng-hide-remove.ng-hide-remove-active {
     opacity:1;
+}
+
+/* Special device rules */
+/* laptops, ipad 3rd gen 8*/
+@media screen and (min-width : 1025px) {
+    body {
+        background-color: green;
+    }
+
+
+    .slider {
+
+    }
+
+}
+/* ipad mini, 1st gen, 2nd gen landscape */
+@media screen
+and (max-width : 1024px)
+and (min-width : 801px)
+{
+    body {
+        background-color: blue;
+    }
+    div.window label {
+        font-size: small;
+    }
+    img.resize{
+        width:900px; /* you can use % */
+        height: auto;
+    }
+    .slider {
+        height: 675px;
+        width: 900px;
+        border: 15px solid #FFFFFF;
+        border-radius: 5px;
+
+
+        -webkit-perspective: 900px;
+        -moz-perspective: 900px;
+        perspective: 900px;
+    }
+    .nav {
+        height: 48px;
+    }
+    .nav li {
+        border: 5px solid #AAAAAA;
+        border-radius: 5px;
+        height: 37px;
+        margin: 0 8px;
+        width: 50px;
+    }
+}
+/* ipad mini portrait */
+@media screen
+and (max-width: 800px)
+and (min-width: 768px)
+{
+
+    body {
+        background-color: #800080;
+    }
+    img.resize{
+        width:700px; /* you can use % */
+        height: auto;
+    }
+    div.window label {
+        font-size: medium;
+    }
+    .slider {
+        height: 500px;
+        width: 700px;
+
+        -webkit-perspective: 700px;
+        -moz-perspective: 700px;
+        perspective: 700px;
+    }
+    .nav {
+        height: 33px;
+    }
+    .nav li {
+        border: 2px solid #AAAAAA;
+        border-radius: 2px;
+        height: 22px;
+        margin: 0 4px;
+        width: 50px;
+    }
+}
+/* small phones lanscape */
+@media screen
+and (max-width : 767px)
+and (min-width: 640px) {
+    body {
+        background-color: orange;
+    }
+    img.resize{
+        width:600px; /* you can use % */
+        height: auto;
+    }
+    div.window label {
+        font-size: small;
+    }
+    .slider {
+        height: 450px;
+        width: 600px;
+
+        -webkit-perspective: 600px;
+        -moz-perspective: 600px;
+        perspective: 600px;
+    }
+    .nav {
+        height: 48px;
+    }
+    .nav li {
+        border: 5px solid #AAAAAA;
+        border-radius: 5px;
+        height: 37px;
+        margin: 0 8px;
+        width: 50px;
+    }
+}
+/* small phones portrait androids */
+@media screen
+and (max-width: 639px)
+and (min-width:401px) {
+    body {
+        background-color: palegoldenrod;
+    }
+    .header {
+        height: 30px;
+        line-height: 30px;
+    }
+    img.resize{
+        width:500px; /* you can use % */
+        height: auto;
+    }
+    div.window label {
+        font-size: xx-small;
+    }
+    .slider {
+        height: 380px;
+        width: 500px;
+        border: 5px solid #FFFFFF;
+        border-radius: 2px;
+
+
+        -webkit-perspective: 500px;
+        -moz-perspective: 500px;
+        perspective: 500px;
+    }
+    .nav {
+        height: 33px;
+    }
+    .nav li {
+        border: 2px solid #AAAAAA;
+        border-radius: 2px;
+        height: 22px;
+        margin: 0 2px;
+        width: 30px;
+    }
+    .nav li.active {
+        border: 3px solid #FFFFFF;
+    }
+}
+/* small phones portrait androids */
+@media screen
+and (max-width: 400px) {
+    body {
+        background-color: deeppink;
+    }
+    .header {
+        height: 30px;
+        line-height: 30px;
+    }
+    img.resize{
+        width:300px; /* you can use % */
+        height: auto;
+    }
+    div.window label {
+        font-size: xx-small;
+    }
+    .slider {
+        height: 225px;
+        width: 300px;
+        border: 5px solid #FFFFFF;
+        border-radius: 2px;
+
+
+        -webkit-perspective: 300px;
+        -moz-perspective: 300px;
+        perspective: 300px;
+    }
+    .nav {
+        height: 33px;
+    }
+    .nav li {
+        border: 2px solid #AAAAAA;
+        border-radius: 2px;
+        height: 22px;
+        margin: 0 2px;
+        width: 30px;
+    }
+    .nav li.active {
+        border: 3px solid #FFFFFF;
+    }
+}
+@media screen
+and (orientation: portrait){
+    div.outer-img-container {
+        top:50%
+    }
+    .slider {
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        top:-50%;
+    }
+
 }

@@ -30,13 +30,6 @@ angular.module('myApp', [
             $location.url(this.current_selection);
 
 
-        },
-        this.uncheck = function(event){
-            if ( this.selection == this.current_selection ){
-                this.current_selection = '/';
-                this.checked = false;
-                $location.url(this.current_selection);
-            }
         }
     }]);
 
