@@ -13,7 +13,7 @@ angular.module('myApp.rsvp', ['ngRoute','ngAnimate'])
         this.active = true;
         this.email_map = {
             "matt" : {
-                "display":"Matthew Johnson and Kristle McCracken"
+                "display":"Matthew Johnson and Kristle McCracken!"
             }
         }
 
