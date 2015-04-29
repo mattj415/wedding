@@ -1,7 +1,23 @@
-<div class="overlay slidedown" ng-show="Ctrl.active" ng-controller="rsvpCtrl as Ctrl" >
+<div class="overlay slidedown" ng-controller="rsvpCtrl as Ctrl" >
     <div class="heading-text"  >
         RSVP
     </div>
-        To:{{Ctrl.email_map.matt.display}}
-        From:{{Ctrl.from}}
+    <div ng-show="Ctrl.guest !== undefined">
+
+        {{Ctrl.guest.name()}}
+        <br>
+        <select ng-model="Ctrl.attending"  ng-options="opt as opt.label for opt in Ctrl.attending_options">
+        </select>
+        <br>
+        <div ng-show="Ctrl.attending.value == 'will' && Ctrl.guest().plus_one">
+            <label for="number">Number of guests</label>
+            <select name="number" ng-model="Ctrl.number"  ng-options="opt as opt.label for opt in Ctrl.numberOptions" >
+            </select>
+        </div>
+            <button type="submit" id="submit" ng-click="Ctrl.submit()" >Submit</button>
+
+    </div>
+    <div ng-hide="Ctrl.guest === undefined">
+        There was a problem with the website. Please email Matt or Kristle to RSVP.
+    </div>
 </div>

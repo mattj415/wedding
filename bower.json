@@ -12,7 +12,9 @@
     "angular-mocks": "~1.2.x",
     "html5-boilerplate": "~4.3.0",
     "angular-animate": "1.2.29-build.590+sha.e81b2f7",
-    "angular-touch": "1.2.29-build.590+sha.e81b2f7"
+    "angular-touch": "1.2.29-build.590+sha.e81b2f7",
+    "express": "~4.12.3",
+    "karma-jasmine": ">=0.1.0"
   },
   "resolutions": {
     "angular": "1.2.29-build.590+sha.e81b2f7"
