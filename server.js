@@ -1,5 +1,6 @@
 var express   =    require("express");
 var mysql     =    require('mysql');
+var bodyParser  =  require("body-parser");
 var app       =    express();
 
 var pool      =    mysql.createPool({
@@ -10,9 +11,15 @@ var pool      =    mysql.createPool({
     database : 'wedding',
     debug    :  false
 });
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
+
 
 function handle_database(req,res) {
     var hashkey = req.params.hashkey;
+    var requestType = req.params.requestType;
     pool.getConnection(function(err,connection){
         if (err) {
             connection.release();
@@ -22,14 +29,19 @@ function handle_database(req,res) {
 
         console.log('connected as id ' + connection.threadId);
 
-        connection.query("select * from guests WHERE hashkey = ?",[hashkey],function(err,rows){
-            connection.release();
-            if(!err) {
-                res.json(rows);
-                console.log('success');
-                console.log(rows);
-            }
-        });
+        if ( requestType == 'guest' ) {
+            connection.query("select * from guests WHERE hashkey = ?", [hashkey], function (err, rows) {
+                connection.release();
+                if (!err) {
+                    res.json(rows);
+                    console.log('success');
+                    console.log(rows);
+                }
+            });
+        } else if ( requestType == 'response'){
+            console.log("attending:" + req.body.attending.value + " num:" + req.body.number.value )
+            res.end('It worked!');
+        }
 
         connection.on('error', function(err) {
             res.json({"code" : 100, "status" : "Error in connection database"});
@@ -48,12 +60,16 @@ app.use(function (req, res, next) {
     // Request headers you wish to allow
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 
+
     // Pass to next layer of middleware
     next();
 });
-app.get("/wedding/:hashkey",function(req,res){
+app.get("/wedding/rsvp/:requestType/:hashkey",function(req,res){
 
     handle_database(req,res);
 });
 
+app.post("/wedding/rsvp/:requestType/:hashkey",function(req,res){
+    handle_database(req,res);
+});
 app.listen(3000);

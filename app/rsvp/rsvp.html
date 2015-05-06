@@ -1,23 +1,25 @@
 <div class="overlay slidedown" ng-controller="rsvpCtrl as Ctrl" >
+    <form ng-submit="Ctrl.processForm()">
     <div class="heading-text"  >
         RSVP
     </div>
-    <div ng-show="Ctrl.guest !== undefined">
+    <div ng-show="Ctrl.guestFound">
 
-        {{Ctrl.guest.name()}}
+        {{Ctrl.guest.name}}
         <br>
         <select ng-model="Ctrl.attending"  ng-options="opt as opt.label for opt in Ctrl.attending_options">
         </select>
         <br>
-        <div ng-show="Ctrl.attending.value == 'will' && Ctrl.guest().plus_one">
+        <div ng-show="Ctrl.attending.value == 'will' && Ctrl.guest.plus_one">
             <label for="number">Number of guests</label>
             <select name="number" ng-model="Ctrl.number"  ng-options="opt as opt.label for opt in Ctrl.numberOptions" >
             </select>
         </div>
-            <button type="submit" id="submit" ng-click="Ctrl.submit()" >Submit</button>
+            <button type="submit" id="submit" >Submit</button>
 
     </div>
-    <div ng-hide="Ctrl.guest === undefined">
+    </form>
+    <div ng-hide="Ctrl.guestFound">
         There was a problem with the website. Please email Matt or Kristle to RSVP.
     </div>
 </div>

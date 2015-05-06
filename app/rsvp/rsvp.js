@@ -9,7 +9,7 @@ angular.module('myApp.rsvp', ['ngRoute','ngAnimate'])
   });
 }])
 
-.controller('rsvpCtrl', ['$routeParams','$location','$http','$q', function($routeParams, $location, $http, $q) {
+.controller('rsvpCtrl', ['$routeParams','$location','$http', function($routeParams, $location, $http ) {
 
 
         this.attending_options = [
@@ -23,31 +23,29 @@ angular.module('myApp.rsvp', ['ngRoute','ngAnimate'])
         ];
         this.number = this.numberOptions[0];
         this.hashkey = $routeParams.hashkey;
-        this.submit = function(){
+        this.processForm = function(){
+            $http.post('http://localhost:3000/wedding/rsvp/response/' + this.hashkey , {attending:this.attending, number:this.number}).success(function(data) { });
             if ( this.attending.value == 'will'){
-                alert("Thanks! We look forward to seeing you at the wedding!");
+  //              alert("Thanks! We look forward to seeing you at the wedding!");
             } else {
-                alert("Well fuck you too!");
+   //             alert("Well fuck you too!");
             }
 
-            $location.url('/');
+
+     //       $location.url('/');
         };
         this.guest = undefined;
-        this.getGuest = function() {
-            var guest = null;
-            var deferred = $q.defer();
-            if (guest !== null) deferred.resolve(guest);
-            $http.get('http://localhost:3000/wedding/' + this.hashkey)
-                .success(function(data) {
-                    console.log("got data", data);
-                    if (data.length) {
-                        deferred.resolve(data[0]);
-                    } else {
-                        deferred.reject();
-                    }
-                }).error(deferred.reject);
-            return deferred.promise;
-        };
-        this.guest = this.getGuest();
+        this.guestFound = false;
+        var rsvp = this;
+        $http.get('http://localhost:3000/wedding/rsvp/guest/' + this.hashkey)
+            .success(function (data) {
+                console.log("got data", data);
+                if (data.length) {
+                    rsvp.guest = data[0];
+                    rsvp.guestFound = true;
+                } else {
+                    rsvp.guestFound = false;
+                }
+            });
 
 }]);
