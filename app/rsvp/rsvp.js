@@ -4,8 +4,7 @@ angular.module('myApp.rsvp', ['ngRoute','ngAnimate'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/rsvp/:hashkey', {
-    templateUrl: 'rsvp/rsvp.html',
-    controller: 'rsvpCtrl'
+    templateUrl: 'rsvp/rsvp.html'
   });
 }])
 

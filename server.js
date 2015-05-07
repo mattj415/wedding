@@ -36,10 +36,20 @@ function handle_database(req,res) {
                     res.json(rows);
                     console.log('success');
                     console.log(rows);
+                } else {
+                    console.log("DB error with select: " + err);
                 }
             });
         } else if ( requestType == 'response'){
-            console.log("attending:" + req.body.attending.value + " num:" + req.body.number.value )
+            console.log("attending:" + req.body.attending.value + " num:" + req.body.number.value );
+            connection.query("UPDATE guests SET responded = 1, guests_attending = ? WHERE hashkey = ?", [req.body.number.value, hashkey], function (err, rows) {
+                connection.release();
+                if (!err) {
+                    console.log('success');
+                } else {
+                    console.log("DB error with update: " + err);
+                }
+            });
             res.end('It worked!');
         }
 
